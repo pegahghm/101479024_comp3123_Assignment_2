@@ -1,0 +1,68 @@
+.Edit_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7fc;
+  }
+  
+  .Edit_Form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .Edit_Form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .Edit_Form div {
+    margin-bottom: 15px;
+  }
+  
+  .Edit_Form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+  }
+  
+  .Edit_Form input {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .Edit_Form input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .Edit_Form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .Edit_Form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .Edit_Form button:focus {
+    outline: none;
+  }
+
+  

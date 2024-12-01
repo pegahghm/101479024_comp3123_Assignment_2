@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo_db_assign2
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo_express_assign2
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+    depends_on:
+      - mongo
+
+  frontend:
+    container_name: frontend_assign2
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    command: npm start
+    depends_on:
+      - backend
+
+  backend:
+    container_name: backend_assign2
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    command: npm start
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/Assignment_2
+      - JWT_SECRET=${JWT_SECRET}
+
+volumes:
+  mongo-data:
